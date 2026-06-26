@@ -4,13 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
     
+    <!-- Configuración Avanzada Open Graph (OG Share) - Conecta Card Oficial -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://altpro22.github.io/Jean-Luis-David/" />
+    <meta property="og:url" content="https://conectacard.github.io/musical-band/" />
     <meta property="og:title" content="OLD STATION BAND | Magazine Edition" />
-    <meta property="og:description" content="Descubre la vanguardia en estilismo y exclusividad. Agenda tu cita en nuestra edición de revista digital." />
+    <meta property="og:description" content="Descubre la mejor música y energía para tus eventos. Explora nuestro repertorio exclusivo con tu CONECTA CARD." />
     
-    <meta property="og:image" content="https://altpro22.github.io/Jean-Luis-David/assets/brand/og_jean.jpg?v=1.1" />
-    <meta property="og:image:secure_url" content="https://altpro22.github.io/Jean-Luis-David/assets/brand/og_jean.jpg?v=1.1" />
+    <!-- Infraestructura Multimedia Premium de Imagen de Portada -->
+    <meta property="og:image" content="https://conectacard.github.io/musical-band/assets/brand/og_band.jpg" />
+    <meta property="og:image:secure_url" content="https://conectacard.github.io/musical-band/assets/brand/og_band.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -88,37 +90,100 @@
             </div>
             
             <div class="mosaic-item custom-actions-block">
-                <button class="btn-custom-action btn-recommended-businesses" onclick="openBrandModal('modal-negocios')">
-                    NEGOCIOS RECOMENDADOS
-                </button>
-                <button class="btn-custom-action btn-vip-promotions" onclick="openBrandModal('modal-promociones')">
-                    PROMOCIONES PARA CLIENTES VIP
+                <!-- Contador de Contratos / Prueba Social Activa -->
+                <div class="contracts-counter-badge">
+                    <i class="fas fa-calendar-check"></i> <span>¡Más de 150 eventos exitosos! Contratos 2026 disponibles</span>
+                </div>
+                <button class="btn-custom-action btn-faq-accordion" onclick="openBrandModal('modal-faq')">
+                    PREGUNTAS FRECUENTES
                 </button>
             </div>
         </div>
 
         <div class="credits-altpro-compact">
             <span class="produced-by">BOCA EN BOCA CARD Produced by Alt Pro</span>
+            
+            <!-- Contenedor Integrado para el Código QR del Repositorio -->
+            <div class="qr-code-container">
+                <img src="assets/hero/qr.png" alt="Código QR Conecta Card" class="qr-hero-image" />
+            </div>
+
             <a href="https://wa.me/524491472336" target="_blank" class="altpro-link">
                 <i class="fab fa-whatsapp"></i> 449 147 2336
             </a>
         </div>
     </section>
 
-    <div id="modal-negocios" class="overlay-modal brand-custom-modal" style="display: none;" onclick="closeBrandModal('modal-negocios')">
-        <button class="btn-close-circular" onclick="closeBrandModal('modal-negocios')">×</button>
-        <div class="zoom-premium-content" onclick="event.stopPropagation()">
-            <div class="zoom-image-wrapper">
-                <img src="assets/brand/negocios.jpg" alt="Negocios Recomendados" class="brand-modal-img">
+    <!-- Modal de Preguntas Frecuentes Reestructurado con Sistema Accordion -->
+    <div id="modal-faq" class="overlay-modal brand-custom-modal" style="display: none;" onclick="closeBrandModal('modal-faq')">
+        <button class="btn-close-circular" onclick="closeBrandModal('modal-faq')">×</button>
+        <div class="zoom-premium-content faq-modal-scroll" onclick="event.stopPropagation()">
+            <div class="faq-header-wrapper">
+                <img src="assets/brand/logo-mini.png" class="faq-mini-logo" alt="Logo">
+                <h3>PREGUNTAS FRECUENTES</h3>
             </div>
-        </div>
-    </div>
+            <hr class="gold-divider" style="border: 0; border-top: 1px solid #d4af37; margin: 10px 0 20px 0;">
+            
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordionItem(this)">
+                        <span>¿Con cuánta anticipación se debe reservar una fecha?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Recomendamos realizar la reserva con un mínimo de 4 a 6 semanas de anticipación para eventos locales, y de 2 a 3 meses para fechas fuera de la región o en temporada alta. Esto nos permite garantizar la disponibilidad absoluta y coordinar la logística de traslado del equipo técnico.</p>
+                    </div>
+                </div>
 
-    <div id="modal-promociones" class="overlay-modal brand-custom-modal" style="display: none;" onclick="closeBrandModal('modal-promociones')">
-        <button class="btn-close-circular" onclick="closeBrandModal('modal-promociones')">×</button>
-        <div class="zoom-premium-content" onclick="event.stopPropagation()">
-            <div class="zoom-image-wrapper">
-                <img src="assets/brand/promociones.jpg" alt="Promociones VIP" class="brand-modal-img">
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordionItem(this)">
+                        <span>¿Se puede personalizar el repertorio para nuestro evento?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>¡Totalmente! Aunque tenemos un show estructurado con los mejores clásicos del rock en inglés y español de los 60s, 70s y 80s, podemos adaptar la intensidad del setlist (más baladas acústicas o rock de alta energía) según el perfil de tus invitados y el dinamismo de tu evento.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordionItem(this)">
+                        <span>¿Viajan a otros estados de la República Mexicana?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Sí, nos presentamos en cualquier parte de México. Los gastos de traslado (viáticos de transporte seguro, hospedaje y alimentación para el staff de músicos y técnicos) se cotizan de forma independiente, transparente y personalizada de acuerdo a la ubicación exacta de la sede.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordionItem(this)">
+                        <span>¿Cuánto tiempo dura la presentación en vivo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Nuestro formato estándar de show consta de 2 turnos de 45 minutos cada uno, o bien, un set continuo de 90 minutos cargado de pura energía rockera. No obstante, nos podemos amoldar sin inconvenientes a las necesidades de agenda específicas de festivales o eventos corporativos.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordionItem(this)">
+                        <span>¿Qué equipo técnico o requerimientos (Rider) necesita la banda?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Para eventos masivos o foráneos proporcionamos un Rider Técnico detallado que abarca las especificaciones de audio, iluminación, escenario y energía regulada indispensables. Para eventos privados pequeños de carácter local, contamos con paquetes especiales que ya incluyen nuestro propio equipo de audio profesional.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordionItem(this)">
+                        <span>¿Cuentan con esquema de facturación?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Sí, contamos con plena capacidad fiscal para emitir comprobantes fiscales (CFDI) si tu empresa, corporativo o comité organizador lo solicita para la comprobación legal y contable de los servicios de entretenimiento contratados.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

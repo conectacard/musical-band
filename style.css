@@ -47,16 +47,41 @@ body { background-color: var(--bg-premium); font-family: 'Montserrat', sans-seri
 .mag-btn { background: #151515; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 10px; text-align: left; font-family: 'Bebas Neue'; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
 .mag-btn .num { color: var(--brand-accent); font-style: italic; font-size: 0.8rem; }
 
-/* Estilos de los dos nuevos botones de marca personalizados */
+/* Estilos de Acciones de Marca Personalizadas y Módulos de Conversión */
 .custom-actions-block { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 10px; margin-top: 5px; width: 100%; }
-.btn-custom-action { width: 100%; height: 50px; background: #000000; border-radius: 12px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease; }
-.btn-recommended-businesses { border: 2px solid var(--brand-accent); color: var(--brand-accent); }
-.btn-recommended-businesses:active { background: rgba(212, 175, 55, 0.15); }
-.btn-vip-promotions { border: 2px solid #ffffff; color: #ffffff; }
-.btn-vip-promotions:active { background: rgba(255, 255, 255, 0.15); }
 
-/* Créditos reposicionados justo debajo del botón VIP en flujo directo */
-.credits-altpro-compact { margin-top: 15px; padding: 5px 5px 15px 5px; display: flex; flex-direction: column; align-items: center; gap: 5px; width: 100%; }
+.contracts-counter-badge { width: 100%; background: #070d19; border: 1px solid rgba(212,175,55,0.25); border-radius: 10px; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; color: #ffffff; letter-spacing: 0.5px; }
+.contracts-counter-badge i { color: var(--brand-accent); font-size: 0.85rem; }
+
+.btn-custom-action { width: 100%; height: 50px; background: #000000; border-radius: 12px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease; }
+
+.btn-faq-accordion { border: 2px solid var(--brand-accent); color: var(--brand-accent); }
+.btn-faq-accordion:active { background: rgba(212, 175, 55, 0.15); }
+
+/* Estructura Avanzada del Sistema de Acordeón para FAQs */
+.faq-modal-scroll { max-height: 85vh; overflow-y: auto; display: flex; flex-direction: column; justify-content: flex-start !important; padding: 30px 20px !important; width: 90% !important; max-width: 420px; background: #020611; border: 2px solid var(--brand-accent); border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.9); }
+.faq-header-wrapper { display: flex; align-items: center; width: 100%; gap: 12px; margin-top: 10px; }
+.faq-mini-logo { width: 35px; height: auto; }
+.faq-header-wrapper h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.15rem; color: #ffffff; letter-spacing: 0.5px; }
+
+.accordion-wrapper { width: 100%; display: flex; flex-direction: column; gap: 12px; padding-bottom: 15px; }
+.accordion-item { width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; overflow: hidden; transition: border-color 0.2s ease; }
+.accordion-item.active { border-color: rgba(212,175,55,0.4); background: rgba(212,175,55,0.02); }
+
+.accordion-trigger { width: 100%; padding: 14px 16px; background: transparent; border: none; color: #ffffff; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.78rem; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; }
+.accordion-trigger span { line-height: 1.3; }
+.accordion-trigger i { color: var(--brand-accent); font-size: 0.8rem; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.accordion-item.active .accordion-trigger i { transform: rotate(180deg); }
+
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1); background: rgba(0, 0, 0, 0.2); }
+.accordion-content p { padding: 0 16px 14px 16px; font-size: 0.75rem; line-height: 1.5; color: rgba(255, 255, 255, 0.75); text-align: justify; font-family: 'Montserrat', sans-serif; font-weight: 400; }
+
+/* Infraestructura del Contenedor del Código QR en Créditos */
+.qr-code-container { width: 100%; display: flex; align-items: center; justify-content: center; padding: 10px 0; margin: 4px 0; }
+.qr-hero-image { width: 100%; max-width: 140px; height: auto; aspect-ratio: 1; border: 3px solid #ffffff; border-radius: 10px; background-color: #ffffff; box-shadow: 0 6px 20px rgba(0,0,0,0.6); display: block; }
+
+/* Créditos reposicionados en flujo directo */
+.credits-altpro-compact { margin-top: 15px; padding: 5px 5px 15px 5px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
 .produced-by { font-size: 0.55rem; font-weight: 800; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
 .altpro-link { background: #000; border: 1px solid #25D366; color: #25D366; padding: 5px 15px; border-radius: 20px; font-weight: 900; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 0.65rem; }
 

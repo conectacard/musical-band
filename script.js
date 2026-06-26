@@ -61,7 +61,6 @@ function renderGallery(cat) {
     grid.appendChild(titleHeader);
 
     if (cat === 'cat2') {
-        // En lugar de imágenes, renderizamos la botonera de 4 canciones
         CONFIG.videosPlaylist.forEach(video => {
             const vBtn = document.createElement('a');
             vBtn.className = 'btn-video-rock';
@@ -72,7 +71,6 @@ function renderGallery(cat) {
             grid.appendChild(vBtn);
         });
     } else {
-        // Mantiene la rejilla original intacta para las otras secciones
         const imgCount = (cat === 'cat1' || cat === 'cat3') ? 6 : 4;
         const imgs = [];
         for(let i = 1; i <= imgCount; i++) {
@@ -153,6 +151,41 @@ function closeBrandModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.style.display = 'none';
+        
+        // Colapsar cualquier acordeón abierto si el modal principal es destruido u ocultado
+        if(modalId === 'modal-faq') {
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+                const content = item.querySelector('.accordion-content');
+                if(content) content.style.maxHeight = null;
+            });
+        }
+    }
+}
+
+/* Lógica Interactiva Exclusiva para el Sistema de Acordeón FAQ */
+function toggleAccordionItem(element) {
+    playClick();
+    const currentItem = element.parentElement;
+    const currentContent = currentItem.querySelector('.accordion-content');
+    const isActive = currentItem.classList.contains('active');
+
+    // Cerrar de forma elegante cualquier otra pregunta abierta
+    document.querySelectorAll('.accordion-item').forEach(item => {
+        if(item !== currentItem) {
+            item.classList.remove('active');
+            const content = item.querySelector('.accordion-content');
+            if(content) content.style.maxHeight = null;
+        }
+    });
+
+    // Alternar el estado actual
+    if(isActive) {
+        currentItem.classList.remove('active');
+        currentContent.style.maxHeight = null;
+    } else {
+        currentItem.classList.add('active');
+        currentContent.style.maxHeight = currentContent.scrollHeight + "px";
     }
 }
 
@@ -194,6 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function shareExperienceRobust() {
-    try { await navigator.share({ title: 'Salón Express Mona Lisa', url: window.location.href }); }
+    try { await navigator.share({ title: 'OLD STATION BAND', url: window.location.href }); }
     catch { alert("Enlace copiado al portapapeles."); }
 }
